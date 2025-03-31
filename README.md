@@ -78,4 +78,4 @@ How do I test the elevator - TDD (realibility and accessibility features)
 2. Define failure points
      For example power outage, and the elevator resets half way. 
      We can hash the current call order list, and buttons pressed within the elevator and store it locally on the processor (CMOS)
-3. Using Mockito/Powermock framework (within Spring) we can define these test/edge cases prior to elevator development. To ensure functionality prior to developing a elevator system. Ensuring we have the resources equipped to handle the elevator calls, in sufficient time to ensure client satisfaction. 
+3. Using Mockito/Powermock framework (within Spring) we can define these test/edge cases prior to elevator development. To ensure functionality prior to developing a elevator system. Ensuring we have the resources equipped to handle the elevator calls, in sufficient time for client satisfaction. 
