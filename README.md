@@ -49,7 +49,7 @@ The elevator does two things on each floor it stops at:
 3. Are we dropping any one off?
     If so update head-count on elevator and progress to next floor on call order list
 
-Functionality: 
+Functionality:     
 In a nutshell the algorithm checks to see what floor the first call that was made on, and begins to navigate towards that call floor.
 The elevator picks up any passengers for the current pass-by floor on the way to the target floor. In this process, these floors are then marked as 'tombstones' in the input array sequence. By setting up a flag value of '-1' for the first index in the subarray, we can effectivly 'skip' over these same floors on the second pass. At each stop that is a pick-up or a tombstone, we pop from the queue.
 Once all the pick-ups are complete, we begin dropping off the passengers via proximity to cut down on repetitive floor passes.
@@ -71,9 +71,11 @@ How do I secure the elevator
         - Most recent access timestamp - Ledger of most recent transactions (clock in/out point for security and auditing purposes)
     2. Each elevator call(s) themselves stored as a hash function to hide user identity , and stored with a timestamp in a key/value database like cassandra for fast verification
     3. Authenticaed with a central database (PostgreSQL) server locally, used by the elevator control system for frequent updates to access permissions list or user roles. 
-       Accessed via HQL for query updates and new user provisioning, or assigning roles.  
-How do I test the elevator - TDD (realibility and accessibility features):
+       Accessed via HQL for query updates and new user provisioning, or assigning roles.
+       
+How do I test the elevator - TDD (realibility and accessibility features)
 1. carry load and max weight  I can create an algorithm to drop off the next nearest passengers using a b-tree to stores drop-off points above and below and go based of proximity (distance) to elevator until its below max weight threshold again.
 2. Define failure points
      For example power outage, and the elevator resets half way. 
      We can hash the current call order list, and buttons pressed within the elevator and store it locally on the processor (CMOS)
+3. Using Mockito/powermock we can define these test cases prior to elevator development, to ensure functionality prior to developing a elevator system. Ensuring we have the resources equipped to handle the elevator calls, in sufficient time to ensure client satisfaction. 
