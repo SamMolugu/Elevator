@@ -54,7 +54,7 @@ In a nutshell the algorithm checks to see what floor the first call that was mad
 The elevator picks up any passengers for the current pass-by floor on the way to the target floor. In this process, these floors are then marked as 'tombstones' in the input array sequence. By setting up a flag value of '-1' for the first index in the subarray, we can effectivly 'skip' over these same floors on the second pass. At each stop that is a pick-up or a tombstone, we pop from the queue.
 Once all the pick-ups are complete, we begin dropping off the passengers via proximity to cut down on repetitive floor passes.
 
-*Unimplemented features*:
+Unimplemented features:
 How do I secure the elevator
 1. Hide the network the elevator is on (By making it undiscoverable)
     1. Create a new subnet VLAN on the router. (Configure VLAN, and assign a new subnet ID) 
