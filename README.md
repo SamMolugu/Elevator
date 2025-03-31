@@ -66,7 +66,8 @@ How do I secure the elevator
     2. To record the actal transactions from the elevator to the processing server, we can use spring security with OAUTH (protocol) and mark each transaction into a ledger (external database device) 
 3. Store the data (verify/hash the elevator calls)
     1. We could use ORM tool like Hibernate to create a user DAO, for example: 
-        - UID (EID) - Privledge (permission/access) level
+        - UID (EID)
+        - Privledge (permission/access) level
         - Access Type (indicate civilian or federal employee)
         - Most recent access timestamp
         - Ledger of most recent transactions (clock in/out point for security and auditing purposes)
