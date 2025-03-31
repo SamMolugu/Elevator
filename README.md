@@ -63,12 +63,13 @@ How do I secure the elevator
     2. We can set up a network firewall, and block all incoming traffic outside the network (making the subnet invisible) 
 2. Then we can encrypt the traffic from the elevator to the central processor for the elevator floor requests (call order(s) list) 
     1. UDP ports for camera, TCP for card reader or biometric scanner using SSL/TLS 
-    2. To record the actal transactions from the elevator to the processing server, we can use spring security with OAUTH (protocol)         and mark each transaction into a ledger (external database device) 
+    2. To record the actal transactions from the elevator to the processing server, we can use spring security with OAUTH (protocol) and mark each transaction into a ledger (external database device) 
 3. Store the data (verify/hash the elevator calls)
     1. We could use ORM tool like Hibernate to create a user DAO, for example: 
         - UID (EID) - Privledge (permission/access) level
         - Access Type (indicate civilian or federal employee)
-        - Most recent access timestamp - Ledger of most recent transactions (clock in/out point for security and auditing purposes)
+        - Most recent access timestamp
+        - Ledger of most recent transactions (clock in/out point for security and auditing purposes)
     2. Each elevator call(s) themselves stored as a hash function to hide user identity , and stored with a timestamp in a key/value database like cassandra for fast verification
     3. Authenticaed with a central database (PostgreSQL) server locally, used by the elevator control system for frequent updates to access permissions list or user roles. 
        Accessed via HQL for query updates and new user provisioning, or assigning roles.
